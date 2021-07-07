@@ -4,35 +4,23 @@ import br.ufrn.imd.dataStructure.Stack;
 import br.ufrn.imd.dataStructure.StackNode;
 import br.ufrn.imd.model.ImageTagged;
 import br.ufrn.imd.service.LoadImage;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.*;
 
 
 import java.io.File;
 import java.util.Objects;
 
-
+@Builder
+@NoArgsConstructor
 public class KNearestNeighbors {
 
-    @Getter
-    @Setter
-    private int numberNeighbors;
+    private Distance distance;
 
-    private final Distance distance;
+    private Stack stack;
 
-    private final Stack stack;
+    private String foodsFolder;
 
-    private final String foodsFolder;
-
-    private final String pathImage;
-
-    public KNearestNeighbors(int numberNeighbors, String pathImage, String foodsFolder, Distance distance){
-        this.distance = distance;
-        this.pathImage = pathImage;
-        this.foodsFolder = foodsFolder;
-        this.numberNeighbors = numberNeighbors;
-        stack = new Stack(numberNeighbors);
-    }
+    private String pathImage;
 
     public String classify(){
 
