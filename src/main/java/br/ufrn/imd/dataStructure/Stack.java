@@ -3,8 +3,11 @@ package br.ufrn.imd.dataStructure;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map;
+import java.util.concurrent.Semaphore;
 
 public class Stack {
+
+    private static final Semaphore semaphore = new Semaphore(1);
 
     private final StackNode[] array;
 
@@ -19,7 +22,8 @@ public class Stack {
     }
 
 
-    public void tryAdd(StackNode newNode) {
+    public void tryAdd(StackNode newNode) throws InterruptedException {
+        semaphore.acquire(1);
         if (full == array.length){
             if (newNode.compareTo(array[full-1]) < 0){
                 array[full-1] = newNode;
@@ -33,6 +37,7 @@ public class Stack {
             array[full] = newNode;
             full++;
         }
+        semaphore.release(1);
     }
 
     private void trySwap(int prev, int next) {
@@ -48,6 +53,9 @@ public class Stack {
 
 
     public String mostPopular() {
+        if (full == 0)
+            return null;
+
         Map<String, Integer> occurrences = new HashMap<>();
         for (StackNode node: array){
             if (occurrences.containsKey(node.getTag())) {

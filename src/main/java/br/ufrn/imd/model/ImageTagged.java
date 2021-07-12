@@ -9,6 +9,6 @@ public class ImageTagged {
 
     private String tag;
 
-    private Byte[] features;
+    private byte[] features;
 
 }

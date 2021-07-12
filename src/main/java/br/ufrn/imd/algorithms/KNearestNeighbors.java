@@ -1,41 +1,57 @@
 package br.ufrn.imd.algorithms;
 
 import br.ufrn.imd.dataStructure.Stack;
-import br.ufrn.imd.dataStructure.StackNode;
 import br.ufrn.imd.model.ImageTagged;
-import br.ufrn.imd.service.LoadImage;
+import br.ufrn.imd.service.LoadImageService;
+import br.ufrn.imd.service.ParallelSearchAndStackService;
 import lombok.*;
 
 
 import java.io.File;
-import java.util.Objects;
+import java.util.*;
 
 @Builder
-@NoArgsConstructor
 public class KNearestNeighbors {
 
-    private Distance distance;
+    private final Distance distance;
 
-    private Stack stack;
+    private final Stack stack;
 
-    private String foodsFolder;
+    private final String foodsFolder;
 
-    private String pathImage;
+    private final String pathImage;
 
-    public String classify(){
+    public String classify() throws InterruptedException {
 
-        LoadImage loadImage = new LoadImage(pathImage, "");
-        ImageTagged imageToClassify = loadImage.searchImage();
+        LoadImageService imageService = new LoadImageService();
+        ImageTagged imageToClassify = imageService.searchImage(pathImage, "");
 
         File file = new File(foodsFolder);
-        for (File folder : Objects.requireNonNull(file.listFiles(File::isDirectory))){
-            for (File image : Objects.requireNonNull(folder.listFiles(File::isFile))){
-                LoadImage loadImageData = new LoadImage(image.getAbsolutePath(), folder.getName());
-                ImageTagged imageData = loadImageData.searchImage();
-                StackNode stackNode = new StackNode(folder.getName(), distance.imageDistance(imageToClassify, imageData));
-                stack.tryAdd(stackNode);
+
+        Vector<Thread> threads = new Vector<>();
+
+        for (File folder : Objects.requireNonNull(file.listFiles(File::isDirectory))) {
+            for (File image : Objects.requireNonNull(folder.listFiles(File::isFile))) {
+                ParallelSearchAndStackService service = ParallelSearchAndStackService.builder().stack(stack)
+                                .image(imageToClassify)
+                                .imagePath(image.getAbsolutePath())
+                                .imageTag(folder.getName())
+                                .distance(distance)
+                                .build();
+
+                Thread thread = new Thread(service);
+                thread.start();
+                threads.add(thread);
+                if (threads.size() == 20){
+                    for( Thread innerThread: threads)
+                        innerThread.join();
+                    threads.clear();
+                }
             }
         }
+
+        for (Thread thread: threads)
+            thread.join();
 
         return stack.mostPopular();
     }

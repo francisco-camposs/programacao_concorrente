@@ -5,22 +5,27 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1fd3f67f-004f-4056-b4e6-4870b56828b6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/libraries/Maven__org_projectlombok_lombok_1_18_20.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Programacao_concorrente.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/service/ParallelSearchAndStackService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/Main.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/algorithms/KNearestNeighbors.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/algorithms/KNearestNeighbors.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/algorithms/KNearestNeighbors.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/dataStructure/Stack.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/dataStructure/Stack.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/model/ImageTagged.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/model/ImageTagged.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/service/LoadImage.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/ufrn/imd/service/LoadImageService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -38,7 +43,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="/usr/local/share/java/opencv4/libopencv_java453.so" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
@@ -46,19 +51,27 @@
     <property name="project.structure.last.edited" value="Modules" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.1438849" />
+    <property name="run.code.analysis.last.selected.profile" value="pProject Default" />
   </component>
   <component name="RunManager">
-    <configuration default="true" type="ArquillianJUnit" factoryName="" nameIsGenerated="true">
-      <option name="arquillianRunConfiguration">
-        <value>
-          <option name="containerStateName" value="" />
-        </value>
-      </option>
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="Main" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="br.ufrn.imd.Main" />
+      <module name="Programacao_concorrente" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="br.ufrn.imd.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.Main" />
+      </list>
+    </recent_temporary>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -68,7 +81,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1625663807419</updated>
-      <workItem from="1625663810974" duration="5888000" />
+      <workItem from="1625663810974" duration="7963000" />
+      <workItem from="1625682815332" duration="3678000" />
+      <workItem from="1625744834105" duration="5512000" />
+      <workItem from="1625767023366" duration="2713000" />
+      <workItem from="1625772660213" duration="5237000" />
+      <workItem from="1625877491321" duration="1253000" />
+      <workItem from="1626088716914" duration="18000" />
+      <workItem from="1626114076390" duration="315000" />
     </task>
     <servers />
   </component>

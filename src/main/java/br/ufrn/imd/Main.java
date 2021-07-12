@@ -1,6 +1,5 @@
 package br.ufrn.imd;
 
-import br.ufrn.imd.algorithms.Distance;
 import br.ufrn.imd.algorithms.EuclideanDistance;
 import br.ufrn.imd.algorithms.KNearestNeighbors;
 import br.ufrn.imd.dataStructure.Stack;
@@ -8,7 +7,7 @@ import org.opencv.core.Core;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws InterruptedException {
 
         System.loadLibrary(Core.NATIVE_LIBRARY_NAME);
 
